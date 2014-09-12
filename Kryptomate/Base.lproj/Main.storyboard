@@ -34,7 +34,7 @@
                                     <rect key="frame" x="16" y="78" width="343" height="81"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text to en-/decrypt" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Nx-AuY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to en-/decrypt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Nx-AuY">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -58,15 +58,6 @@
                                     <action selector="modeButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cWV-MU-mQY"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sip-zz-OMr">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="297" width="343" height="80"/>
-                                </variation>
-                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ywt-ba-d42">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -76,6 +67,15 @@
                                     <action selector="depthChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="Ylb-PR-7bi"/>
                                 </connections>
                             </slider>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sip-zz-OMr">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="294" width="343" height="80"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -84,8 +84,8 @@
                                 <exclude reference="JQe-cb-OfV"/>
                                 <exclude reference="Y6U-Nx-AuY"/>
                                 <exclude reference="m30-jP-uhW"/>
-                                <exclude reference="sip-zz-OMr"/>
                                 <exclude reference="Ywt-ba-d42"/>
+                                <exclude reference="sip-zz-OMr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -94,8 +94,8 @@
                                 <include reference="JQe-cb-OfV"/>
                                 <include reference="Y6U-Nx-AuY"/>
                                 <include reference="m30-jP-uhW"/>
-                                <include reference="sip-zz-OMr"/>
                                 <include reference="Ywt-ba-d42"/>
+                                <include reference="sip-zz-OMr"/>
                             </mask>
                         </variation>
                     </view>
@@ -141,18 +141,7 @@
                                     <rect key="frame" x="16" y="78" width="343" height="81"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text to en-/decrypt" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-q7-vM5">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="167" width="343" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="inputTextChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="vm6-uI-ya2"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter the encryption key" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-yG-R1x">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the encryption key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-yG-R1x">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -185,26 +174,37 @@
                                     <rect key="frame" x="16" y="297" width="343" height="80"/>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to en-/decrypt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-q7-vM5">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="167" width="343" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="inputTextChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="vm6-uI-ya2"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ySE-BC-CjD"/>
                                 <exclude reference="X9A-fp-pvM"/>
-                                <exclude reference="fe5-q7-vM5"/>
                                 <exclude reference="AyJ-yG-R1x"/>
                                 <exclude reference="zhJ-QH-jrM"/>
                                 <exclude reference="Ml7-xF-zaX"/>
+                                <exclude reference="fe5-q7-vM5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ySE-BC-CjD"/>
                                 <include reference="X9A-fp-pvM"/>
-                                <include reference="fe5-q7-vM5"/>
                                 <include reference="AyJ-yG-R1x"/>
                                 <include reference="zhJ-QH-jrM"/>
                                 <include reference="Ml7-xF-zaX"/>
+                                <include reference="fe5-q7-vM5"/>
                             </mask>
                         </variation>
                     </view>
