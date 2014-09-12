@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		397624EC19C2656800AD0EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624EB19C2656800AD0EA0 /* AppDelegate.swift */; };
-		397624EE19C2656800AD0EA0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624ED19C2656800AD0EA0 /* FirstViewController.swift */; };
-		397624F019C2656800AD0EA0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624EF19C2656800AD0EA0 /* SecondViewController.swift */; };
+		397624EE19C2656800AD0EA0 /* CaesarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624ED19C2656800AD0EA0 /* CaesarViewController.swift */; };
+		397624F019C2656800AD0EA0 /* VigenereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624EF19C2656800AD0EA0 /* VigenereViewController.swift */; };
 		397624F319C2656800AD0EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397624F119C2656800AD0EA0 /* Main.storyboard */; };
 		397624F519C2656800AD0EA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397624F419C2656800AD0EA0 /* Images.xcassets */; };
 		397624F819C2656800AD0EA0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397624F619C2656800AD0EA0 /* LaunchScreen.xib */; };
@@ -30,8 +30,8 @@
 		397624E619C2656800AD0EA0 /* Kryptomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kryptomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397624EA19C2656800AD0EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		397624EB19C2656800AD0EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		397624ED19C2656800AD0EA0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		397624EF19C2656800AD0EA0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		397624ED19C2656800AD0EA0 /* CaesarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaesarViewController.swift; sourceTree = "<group>"; };
+		397624EF19C2656800AD0EA0 /* VigenereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigenereViewController.swift; sourceTree = "<group>"; };
 		397624F219C2656800AD0EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		397624F419C2656800AD0EA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		397624F719C2656800AD0EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				397624EB19C2656800AD0EA0 /* AppDelegate.swift */,
-				397624ED19C2656800AD0EA0 /* FirstViewController.swift */,
-				397624EF19C2656800AD0EA0 /* SecondViewController.swift */,
+				397624ED19C2656800AD0EA0 /* CaesarViewController.swift */,
+				397624EF19C2656800AD0EA0 /* VigenereViewController.swift */,
 				397624F119C2656800AD0EA0 /* Main.storyboard */,
 				397624F419C2656800AD0EA0 /* Images.xcassets */,
 				397624F619C2656800AD0EA0 /* LaunchScreen.xib */,
@@ -215,9 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				397624F019C2656800AD0EA0 /* SecondViewController.swift in Sources */,
+				397624F019C2656800AD0EA0 /* VigenereViewController.swift in Sources */,
 				397624EC19C2656800AD0EA0 /* AppDelegate.swift in Sources */,
-				397624EE19C2656800AD0EA0 /* FirstViewController.swift in Sources */,
+				397624EE19C2656800AD0EA0 /* CaesarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +409,7 @@
 				3976250919C2656800AD0EA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3976250A19C2656800AD0EA0 /* Build configuration list for PBXNativeTarget "KryptomateTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				3976250C19C2656800AD0EA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
