@@ -39,17 +39,33 @@ class FirstViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	func encryptCaesar(input: String, encDepth: Int) -> String {
-		return "foobar"
-	}
+	func caesar(input: NSString, encDepth: Int) -> String {
+		var output = ""
+		var a: Int
 
-	func decryptCaesar(input: String, encDepth: Int) -> String {
-		return "barbaz"
+		for i in 1..<input.length {
+			a = Int(input.characterAtIndex(i))
+			if (a < 65 || a > 122 || (a > 90 && a < 97)) { // Non-Alphabetical
+				// TODO: Converting ints to chars/strings in Swift?
+			} else if (a >= 65 && a <= 90) { // Uppercase
+				a += encDepth
+				if (a < 65) { a += 26 }
+				if (a > 90) { a -= 26 }
+				// TODO: Append the char representation of a to output here as well
+			} else { // Lowercase
+				a += encDepth
+				if (a < 97) { a += 26 }
+				if (a > 122) { a -= 26 }
+				// TODO: Append the char representation of a to output here as well
+			}
+		}
+
+		return output
 	}
 
 	@IBAction func inputTextChanged(sender: UITextField) {
 		outputLabel.hidden = false
-		outputLabel.text = encryptCaesar(inputTextField.text, encDepth: depth)
+		outputLabel.text = caesar(inputTextField.text, encDepth: depth)
 	}
 	
 	@IBAction func depthChanged(sender: UISlider) {
@@ -61,11 +77,11 @@ class FirstViewController: UIViewController {
 		if currentMode == mode.enc {
 			currentMode = mode.dec
 			sender.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-			outputLabel.text = decryptCaesar(inputTextField.text, encDepth: depth)
+			outputLabel.text = caesar(inputTextField.text, encDepth: depth)
 		} else {
 			currentMode = mode.enc
 			sender.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-			outputLabel.text = encryptCaesar(inputTextField.text, encDepth: depth)
+			outputLabel.text = caesar(inputTextField.text, encDepth: depth)
 		}
 	}
 
