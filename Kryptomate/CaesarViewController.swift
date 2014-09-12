@@ -25,6 +25,14 @@ class FirstViewController: UIViewController {
 				return "Decrypt"
 			}
 		}
+		func crypt() -> Int {
+			switch self {
+			case .enc:
+				return 1;
+			case .dec:
+				return -1;
+			}
+		}
 	}
 
 	var currentMode = mode.enc
@@ -69,24 +77,24 @@ class FirstViewController: UIViewController {
 
 	@IBAction func inputTextChanged(sender: UITextField) {
 		outputLabel.hidden = false
-		outputLabel.text = caesar(inputTextField.text, encDepth: depth)
+		outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 	}
 	
 	@IBAction func depthChanged(sender: UISlider) {
 		depth = Int(floor(sender.value))
 		encButton.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-		outputLabel.text = caesar(inputTextField.text, encDepth: depth)
+		outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 	}
 
 	@IBAction func modeButtonPressed(sender: UIButton) {
 		if currentMode == mode.enc {
 			currentMode = mode.dec
 			sender.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-			outputLabel.text = caesar(inputTextField.text, encDepth: depth)
+			outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 		} else {
 			currentMode = mode.enc
 			sender.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-			outputLabel.text = caesar(inputTextField.text, encDepth: depth)
+			outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 		}
 	}
 
