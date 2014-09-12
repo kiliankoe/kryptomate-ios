@@ -45,15 +45,6 @@
                                     <action selector="inputTextChanged:" destination="9pv-A4-QxB" eventType="editingChanged" id="Gu6-GM-AEb"/>
                                 </connections>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ywt-ba-d42">
-                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="14" y="205" width="347" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="depthChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="Ylb-PR-7bi"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m30-jP-uhW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.96826171875" green="0.96826171875" blue="0.96826171875" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,9 +64,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="297" width="343" height="50"/>
+                                    <rect key="frame" x="16" y="297" width="343" height="80"/>
                                 </variation>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ywt-ba-d42">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="205" width="347" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="depthChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="Ylb-PR-7bi"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -83,9 +83,9 @@
                                 <exclude reference="eIG-BG-mJE"/>
                                 <exclude reference="JQe-cb-OfV"/>
                                 <exclude reference="Y6U-Nx-AuY"/>
-                                <exclude reference="Ywt-ba-d42"/>
                                 <exclude reference="m30-jP-uhW"/>
                                 <exclude reference="sip-zz-OMr"/>
+                                <exclude reference="Ywt-ba-d42"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -93,9 +93,9 @@
                                 <include reference="eIG-BG-mJE"/>
                                 <include reference="JQe-cb-OfV"/>
                                 <include reference="Y6U-Nx-AuY"/>
-                                <include reference="Ywt-ba-d42"/>
                                 <include reference="m30-jP-uhW"/>
                                 <include reference="sip-zz-OMr"/>
+                                <include reference="Ywt-ba-d42"/>
                             </mask>
                         </variation>
                     </view>
@@ -182,7 +182,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="297" width="343" height="50"/>
+                                    <rect key="frame" x="16" y="297" width="343" height="80"/>
                                 </variation>
                             </label>
                         </subviews>

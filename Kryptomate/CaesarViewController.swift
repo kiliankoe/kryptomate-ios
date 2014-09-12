@@ -43,20 +43,24 @@ class FirstViewController: UIViewController {
 		var output = ""
 		var a: Int
 
-		for i in 1..<input.length {
+		if (input.length == 0) {
+			return ""
+		}
+
+		for i in 0..<input.length {
 			a = Int(input.characterAtIndex(i))
 			if (a < 65 || a > 122 || (a > 90 && a < 97)) { // Non-Alphabetical
-				// TODO: Converting ints to chars/strings in Swift?
+				output.append(Character(UnicodeScalar(a)))
 			} else if (a >= 65 && a <= 90) { // Uppercase
 				a += encDepth
 				if (a < 65) { a += 26 }
 				if (a > 90) { a -= 26 }
-				// TODO: Append the char representation of a to output here as well
+				output.append(Character(UnicodeScalar(a)))
 			} else { // Lowercase
 				a += encDepth
 				if (a < 97) { a += 26 }
 				if (a > 122) { a -= 26 }
-				// TODO: Append the char representation of a to output here as well
+				output.append(Character(UnicodeScalar(a)))
 			}
 		}
 
@@ -71,6 +75,7 @@ class FirstViewController: UIViewController {
 	@IBAction func depthChanged(sender: UISlider) {
 		depth = Int(floor(sender.value))
 		encButton.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
+		outputLabel.text = caesar(inputTextField.text, encDepth: depth)
 	}
 
 	@IBAction func modeButtonPressed(sender: UIButton) {
