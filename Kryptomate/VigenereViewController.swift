@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var inputTextField: UITextField!
 	@IBOutlet weak var encKeyTextField: UITextField!
@@ -46,7 +46,7 @@ class SecondViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	func vigenere(input: NSString, key: NSString, crypt: Int) -> String {
+	func vigenere(input: NSString, key: NSString) -> String {
 		var output = ""
 		var a: Int
 		var k: Int
@@ -57,7 +57,7 @@ class SecondViewController: UIViewController {
 
 		for i in 0..<input.length {
 			a = Int(input.characterAtIndex(i))
-			k = crypt * (key.characterAtIndex(i % key.length) - 65)
+			k = currentMode.crypt() * (key.characterAtIndex(i % key.length) - 65)
 			if (a < 65 || a > 122 || (a > 90 && a < 97)) { // Non-Alphabetical
 				output.append(Character(UnicodeScalar(a)))
 			} else if (a >= 65 && a <= 90) { // Uppercase
@@ -76,26 +76,31 @@ class SecondViewController: UIViewController {
 		return output
 	}
 
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
+	}
+
 	@IBAction func inputTextChanged(sender: UITextField) {
 		outputLabel.hidden = false
-		outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text, crypt: currentMode.crypt())
+		outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 	}
 
 	@IBAction func encKeyChanged(sender: UITextField) {
 		encKeyTextField.text = encKeyTextField.text.uppercaseString
 		outputLabel.hidden = false
-		outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text, crypt: currentMode.crypt())
+		outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 	}
 
 	@IBAction func modeButtonPressed(sender: UIButton) {
 		if currentMode == mode.enc {
 			currentMode = mode.dec
 			sender.setTitle("Decrypt", forState: UIControlState.Normal)
-			outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text, crypt: currentMode.crypt())
+			outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 		} else {
 			currentMode = mode.enc
 			sender.setTitle("Encrypt", forState: UIControlState.Normal)
-			outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text, crypt: currentMode.crypt())
+			outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 		}
 	}
 }

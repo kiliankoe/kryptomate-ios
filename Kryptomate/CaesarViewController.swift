@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var inputTextField: UITextField!
 	@IBOutlet weak var encDepthSlider: UISlider!
@@ -75,11 +75,16 @@ class FirstViewController: UIViewController {
 		return output
 	}
 
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
+	}
+
 	@IBAction func inputTextChanged(sender: UITextField) {
 		outputLabel.hidden = false
 		outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 	}
-	
+
 	@IBAction func depthChanged(sender: UISlider) {
 		depth = Int(floor(sender.value))
 		encButton.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)

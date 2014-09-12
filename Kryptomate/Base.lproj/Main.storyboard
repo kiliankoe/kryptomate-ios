@@ -43,6 +43,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="inputTextChanged:" destination="9pv-A4-QxB" eventType="editingChanged" id="Gu6-GM-AEb"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="P61-4c-ABi"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m30-jP-uhW">
@@ -150,6 +151,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="encKeyChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="1Rr-uA-A9T"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="5ZM-d9-XnQ"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-QH-jrM">
@@ -183,6 +185,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="inputTextChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="vm6-uI-ya2"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="LDG-lf-cyd"/>
                                 </connections>
                             </textField>
                         </subviews>
