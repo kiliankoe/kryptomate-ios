@@ -34,7 +34,7 @@
                                     <rect key="frame" x="16" y="78" width="343" height="81"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text you want to en-/decrypt" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Nx-AuY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text to en-/decrypt" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Nx-AuY">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -141,13 +141,16 @@
                                     <rect key="frame" x="16" y="78" width="343" height="81"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text you want to en-/decrypt" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-q7-vM5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text to en-/decrypt" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-q7-vM5">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="167" width="343" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="inputTextChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="vm6-uI-ya2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter the encryption key" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-yG-R1x">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -156,6 +159,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="205" width="343" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="encKeyChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="1Rr-uA-A9T"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-QH-jrM">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -166,6 +172,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="243" width="343" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="modeButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bOY-44-c8P"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml7-xF-zaX">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -200,6 +209,12 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Vigenère" image="V" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="encButton" destination="zhJ-QH-jrM" id="xzY-ym-aed"/>
+                        <outlet property="encKeyTextField" destination="AyJ-yG-R1x" id="u24-5g-XZb"/>
+                        <outlet property="inputTextField" destination="fe5-q7-vM5" id="iDv-o2-rrT"/>
+                        <outlet property="outputLabel" destination="Ml7-xF-zaX" id="Md5-Nf-SVD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
