@@ -81,7 +81,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func inputTextChanged(sender: UITextField) {
-//		outputTextView.hidden = false
 		outputTextView.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 	}
 
