@@ -13,7 +13,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var inputTextField: UITextField!
 	@IBOutlet weak var encKeyTextField: UITextField!
 	@IBOutlet weak var encButton: UIButton!
-	@IBOutlet weak var outputLabel: UILabel!
+	@IBOutlet weak var outputTextView: UITextView!
 
 	enum mode {
 		case enc, dec
@@ -81,26 +81,34 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 		return true
 	}
 
+	func checkEncryptionString(originalstring: String) -> NSString {
+		// Encryptionstring is allcaps
+		var newstring = originalstring.uppercaseString
+		// and contains no spaces
+		newstring = newstring.stringByReplacingOccurrencesOfString(" ", withString: "")
+		// no numbers either
+		// TODO: Not sure how atm
+		return newstring
+	}
+
 	@IBAction func inputTextChanged(sender: UITextField) {
-		outputLabel.hidden = false
-		outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
+		outputTextView.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 	}
 
 	@IBAction func encKeyChanged(sender: UITextField) {
-		encKeyTextField.text = encKeyTextField.text.uppercaseString
-		outputLabel.hidden = false
-		outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
+		encKeyTextField.text = checkEncryptionString(encKeyTextField.text)
+		outputTextView.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 	}
 
 	@IBAction func modeButtonPressed(sender: UIButton) {
 		if currentMode == mode.enc {
 			currentMode = mode.dec
-			sender.setTitle("Decrypt", forState: UIControlState.Normal)
-			outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
+			sender.setTitle("Current Mode: Decrypt", forState: UIControlState.Normal)
+			outputTextView.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 		} else {
 			currentMode = mode.enc
-			sender.setTitle("Encrypt", forState: UIControlState.Normal)
-			outputLabel.text = vigenere(inputTextField.text, key: encKeyTextField.text)
+			sender.setTitle("Current Mode: Encrypt", forState: UIControlState.Normal)
+			outputTextView.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 		}
 	}
 }

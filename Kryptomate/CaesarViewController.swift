@@ -13,16 +13,16 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var inputTextField: UITextField!
 	@IBOutlet weak var encDepthSlider: UISlider!
 	@IBOutlet weak var encButton: UIButton!
-	@IBOutlet weak var outputLabel: UILabel!
+	@IBOutlet weak var outputTextView: UITextView!
 
 	enum mode {
 		case enc, dec
 		func description() -> String {
 			switch self {
 			case .enc:
-				return "Encrypt"
+				return "Current mode: Encrypt"
 			case .dec:
-				return "Decrypt"
+				return "Current mode: Decrypt"
 			}
 		}
 		func crypt() -> Int {
@@ -81,25 +81,25 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func inputTextChanged(sender: UITextField) {
-		outputLabel.hidden = false
-		outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
+//		outputTextView.hidden = false
+		outputTextView.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 	}
 
 	@IBAction func depthChanged(sender: UISlider) {
 		depth = Int(floor(sender.value))
 		encButton.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-		outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
+		outputTextView.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 	}
 
 	@IBAction func modeButtonPressed(sender: UIButton) {
 		if currentMode == mode.enc {
 			currentMode = mode.dec
 			sender.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-			outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
+			outputTextView.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 		} else {
 			currentMode = mode.enc
 			sender.setTitle("\(currentMode.description()) (\(depth))", forState: UIControlState.Normal)
-			outputLabel.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
+			outputTextView.text = caesar(inputTextField.text, encDepth: depth * currentMode.crypt())
 		}
 	}
 
