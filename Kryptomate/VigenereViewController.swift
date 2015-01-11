@@ -87,7 +87,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 		// and contains no spaces
 		newstring = newstring.stringByReplacingOccurrencesOfString(" ", withString: "")
 		// no numbers either
-		// TODO: Not sure how atm
+		if let match = newstring.rangeOfString("\\d", options: .RegularExpressionSearch) {
+			// since the number should just be typed, we should get away with
+			// removing the last char in the string
+			let stringLength = countElements(newstring)
+			let substringIndex = stringLength - 1
+			newstring = newstring.substringToIndex(advance(newstring.startIndex, substringIndex))
+		}
 		return newstring
 	}
 
