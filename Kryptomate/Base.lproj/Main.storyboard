@@ -2,11 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Caesar-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Kryptomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
@@ -21,17 +23,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="48" y="28" width="278" height="65"/>
-                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to en-/decrypt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Nx-AuY">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="167" width="343" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="inputTextChanged:" destination="9pv-A4-QxB" eventType="editingChanged" id="Gu6-GM-AEb"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="P61-4c-ABi"/>
@@ -39,50 +35,70 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m30-jP-uhW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.96826171875" green="0.96826171875" blue="0.96826171875" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93912472345132747" green="0.93912472345132747" blue="0.93912472345132747" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Current mode: Encrypt (10)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="243" width="343" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="modeButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cWV-MU-mQY"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ywt-ba-d42">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="14" y="205" width="347" height="31"/>
-                                </variation>
                                 <connections>
                                     <action selector="depthChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="Ylb-PR-7bi"/>
                                 </connections>
                             </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqG-Di-syT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.99143781565656564" green="0.99143781565656564" blue="0.99143781565656564" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98454784292035402" green="0.98454784292035402" blue="0.98454784292035402" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="NGK-Q6-308"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="281" width="343" height="120"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NGK-Q6-308"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="NGK-Q6-308"/>
+                                    </mask>
                                 </variation>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQe-cb-OfV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the text, adjust the depth and choose either en- or decryption mode." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQe-cb-OfV">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <string key="text">Enter the text, adjust the depth and choose either en- or decryption mode. Kryptomate will only change alphabetical letters (A-Z, a-z).</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="78" width="343" height="81"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                         </accessibility>
+                        <constraints>
+                            <constraint firstItem="eIG-BG-mJE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="2sr-Qo-QRu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eIG-BG-mJE" secondAttribute="trailing" constant="33" id="30n-ug-36A"/>
+                            <constraint firstItem="qqG-Di-syT" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="3oo-fP-Gn0"/>
+                            <constraint firstItem="JQe-cb-OfV" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="8c7-Fb-KAn"/>
+                            <constraint firstItem="m30-jP-uhW" firstAttribute="top" secondItem="Ywt-ba-d42" secondAttribute="bottom" constant="8" id="AvK-at-jk7"/>
+                            <constraint firstItem="Y6U-Nx-AuY" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="IEu-lg-Dor"/>
+                            <constraint firstItem="JQe-cb-OfV" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="51" id="KzO-uw-uKN"/>
+                            <constraint firstItem="JQe-cb-OfV" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="PIe-kd-Kn8"/>
+                            <constraint firstItem="qqG-Di-syT" firstAttribute="top" secondItem="m30-jP-uhW" secondAttribute="bottom" constant="8" id="Qbt-i9-Hk9"/>
+                            <constraint firstItem="Ywt-ba-d42" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="RrC-dF-Qk7"/>
+                            <constraint firstItem="Y6U-Nx-AuY" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="X1d-AM-FEC"/>
+                            <constraint firstItem="eIG-BG-mJE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="32" id="YV6-Tj-uTg"/>
+                            <constraint firstItem="m30-jP-uhW" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="jns-rm-HBP"/>
+                            <constraint firstItem="qqG-Di-syT" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="m1P-SK-M8H"/>
+                            <constraint firstItem="Ywt-ba-d42" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="oTd-K5-2XX"/>
+                            <constraint firstItem="Y6U-Nx-AuY" firstAttribute="top" secondItem="JQe-cb-OfV" secondAttribute="bottom" constant="8" id="rcP-Cq-4Qz"/>
+                            <constraint firstItem="Ywt-ba-d42" firstAttribute="top" secondItem="Y6U-Nx-AuY" secondAttribute="bottom" constant="8" id="uoW-IM-dIQ"/>
+                            <constraint firstItem="m30-jP-uhW" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="z4U-MW-T6z"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="eIG-BG-mJE"/>
@@ -91,6 +107,26 @@
                                 <exclude reference="Ywt-ba-d42"/>
                                 <exclude reference="qqG-Di-syT"/>
                                 <exclude reference="JQe-cb-OfV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2sr-Qo-QRu"/>
+                                <exclude reference="30n-ug-36A"/>
+                                <exclude reference="YV6-Tj-uTg"/>
+                                <exclude reference="8c7-Fb-KAn"/>
+                                <exclude reference="KzO-uw-uKN"/>
+                                <exclude reference="PIe-kd-Kn8"/>
+                                <exclude reference="IEu-lg-Dor"/>
+                                <exclude reference="X1d-AM-FEC"/>
+                                <exclude reference="rcP-Cq-4Qz"/>
+                                <exclude reference="RrC-dF-Qk7"/>
+                                <exclude reference="oTd-K5-2XX"/>
+                                <exclude reference="uoW-IM-dIQ"/>
+                                <exclude reference="AvK-at-jk7"/>
+                                <exclude reference="jns-rm-HBP"/>
+                                <exclude reference="z4U-MW-T6z"/>
+                                <exclude reference="3oo-fP-Gn0"/>
+                                <exclude reference="Qbt-i9-Hk9"/>
+                                <exclude reference="m1P-SK-M8H"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -102,6 +138,26 @@
                                 <include reference="qqG-Di-syT"/>
                                 <include reference="JQe-cb-OfV"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="2sr-Qo-QRu"/>
+                                <include reference="30n-ug-36A"/>
+                                <include reference="YV6-Tj-uTg"/>
+                                <include reference="8c7-Fb-KAn"/>
+                                <include reference="KzO-uw-uKN"/>
+                                <include reference="PIe-kd-Kn8"/>
+                                <include reference="IEu-lg-Dor"/>
+                                <include reference="X1d-AM-FEC"/>
+                                <include reference="rcP-Cq-4Qz"/>
+                                <include reference="RrC-dF-Qk7"/>
+                                <include reference="oTd-K5-2XX"/>
+                                <include reference="uoW-IM-dIQ"/>
+                                <include reference="AvK-at-jk7"/>
+                                <include reference="jns-rm-HBP"/>
+                                <include reference="z4U-MW-T6z"/>
+                                <include reference="3oo-fP-Gn0"/>
+                                <include reference="Qbt-i9-Hk9"/>
+                                <include reference="m1P-SK-M8H"/>
+                            </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Caesar" image="C" id="acW-dT-cKf"/>
@@ -112,13 +168,13 @@
                         <outlet property="outputTextView" destination="qqG-Di-syT" id="bmT-7Q-cfE"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.25" y="-320.5"/>
         </scene>
         <!--Vigenère-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Kryptomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
@@ -133,17 +189,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="48" y="28" width="278" height="65"/>
-                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Encryption key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-yG-R1x">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="205" width="343" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="encKeyChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="1Rr-uA-A9T"/>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="5ZM-d9-XnQ"/>
@@ -151,13 +201,10 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-QH-jrM">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.9682617188" green="0.9682617188" blue="0.9682617188" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95283776521682739" green="0.95300072431564331" blue="0.95282751321792603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Current Mode: Encrypt">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="243" width="343" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="modeButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bOY-44-c8P"/>
                                 </connections>
@@ -166,42 +213,86 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="167" width="343" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="inputTextChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="vm6-uI-ya2"/>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="LDG-lf-cyd"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vT-bs-H4d">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.9914378157" green="0.9914378157" blue="0.9914378157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="281" width="343" height="120"/>
-                                </variation>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the text and key and choose either en- or decryption mode. Kryptomate will only change alphabetical letters (A-Z, a-z)." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-fp-pvM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the text and key and choose either en- or decryption mode." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-fp-pvM">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="78" width="343" height="81"/>
-                                </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vT-bs-H4d">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.98812824487686157" green="0.98829692602157593" blue="0.988117516040802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Ba5-x2-WxY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ba5-x2-WxY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ba5-x2-WxY"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ySE-BC-CjD" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="32" id="3IF-MF-or8"/>
+                            <constraint firstItem="X9A-fp-pvM" firstAttribute="top" secondItem="ySE-BC-CjD" secondAttribute="bottom" constant="5" id="7qY-E3-wct"/>
+                            <constraint firstItem="0vT-bs-H4d" firstAttribute="top" secondItem="zhJ-QH-jrM" secondAttribute="bottom" constant="8" id="8Yk-ij-Yi5"/>
+                            <constraint firstItem="0vT-bs-H4d" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Ajp-g9-j4K"/>
+                            <constraint firstItem="zhJ-QH-jrM" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="CDj-TR-d1Z"/>
+                            <constraint firstItem="fe5-q7-vM5" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="Ejw-f9-xtZ"/>
+                            <constraint firstItem="0vT-bs-H4d" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="FuB-nA-ypQ"/>
+                            <constraint firstItem="ySE-BC-CjD" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="Hke-ge-MSE"/>
+                            <constraint firstItem="AyJ-yG-R1x" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="OZw-Oq-sP6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ySE-BC-CjD" secondAttribute="trailing" constant="33" id="Phk-4a-XVM"/>
+                            <constraint firstItem="fe5-q7-vM5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Q96-KQ-N49"/>
+                            <constraint firstItem="fe5-q7-vM5" firstAttribute="top" secondItem="X9A-fp-pvM" secondAttribute="bottom" constant="8" id="ZMP-0C-VO5"/>
+                            <constraint firstItem="zhJ-QH-jrM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="hDJ-eg-6rE"/>
+                            <constraint firstItem="X9A-fp-pvM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="klk-uc-I0a"/>
+                            <constraint firstItem="zhJ-QH-jrM" firstAttribute="top" secondItem="AyJ-yG-R1x" secondAttribute="bottom" constant="8" id="pPS-78-pnW"/>
+                            <constraint firstItem="AyJ-yG-R1x" firstAttribute="top" secondItem="fe5-q7-vM5" secondAttribute="bottom" constant="8" id="ps1-MN-Jbn"/>
+                            <constraint firstItem="AyJ-yG-R1x" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="qEC-Tl-bvV"/>
+                            <constraint firstItem="X9A-fp-pvM" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="tcr-P6-FOY"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ySE-BC-CjD"/>
                                 <exclude reference="AyJ-yG-R1x"/>
                                 <exclude reference="zhJ-QH-jrM"/>
                                 <exclude reference="fe5-q7-vM5"/>
-                                <exclude reference="0vT-bs-H4d"/>
                                 <exclude reference="X9A-fp-pvM"/>
+                                <exclude reference="0vT-bs-H4d"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3IF-MF-or8"/>
+                                <exclude reference="Hke-ge-MSE"/>
+                                <exclude reference="Phk-4a-XVM"/>
+                                <exclude reference="7qY-E3-wct"/>
+                                <exclude reference="klk-uc-I0a"/>
+                                <exclude reference="tcr-P6-FOY"/>
+                                <exclude reference="Ejw-f9-xtZ"/>
+                                <exclude reference="Q96-KQ-N49"/>
+                                <exclude reference="ZMP-0C-VO5"/>
+                                <exclude reference="OZw-Oq-sP6"/>
+                                <exclude reference="ps1-MN-Jbn"/>
+                                <exclude reference="qEC-Tl-bvV"/>
+                                <exclude reference="CDj-TR-d1Z"/>
+                                <exclude reference="hDJ-eg-6rE"/>
+                                <exclude reference="pPS-78-pnW"/>
+                                <exclude reference="8Yk-ij-Yi5"/>
+                                <exclude reference="Ajp-g9-j4K"/>
+                                <exclude reference="FuB-nA-ypQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -210,8 +301,28 @@
                                 <include reference="AyJ-yG-R1x"/>
                                 <include reference="zhJ-QH-jrM"/>
                                 <include reference="fe5-q7-vM5"/>
-                                <include reference="0vT-bs-H4d"/>
                                 <include reference="X9A-fp-pvM"/>
+                                <include reference="0vT-bs-H4d"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3IF-MF-or8"/>
+                                <include reference="Hke-ge-MSE"/>
+                                <include reference="Phk-4a-XVM"/>
+                                <include reference="7qY-E3-wct"/>
+                                <include reference="klk-uc-I0a"/>
+                                <include reference="tcr-P6-FOY"/>
+                                <include reference="Ejw-f9-xtZ"/>
+                                <include reference="Q96-KQ-N49"/>
+                                <include reference="ZMP-0C-VO5"/>
+                                <include reference="OZw-Oq-sP6"/>
+                                <include reference="ps1-MN-Jbn"/>
+                                <include reference="qEC-Tl-bvV"/>
+                                <include reference="CDj-TR-d1Z"/>
+                                <include reference="hDJ-eg-6rE"/>
+                                <include reference="pPS-78-pnW"/>
+                                <include reference="8Yk-ij-Yi5"/>
+                                <include reference="Ajp-g9-j4K"/>
+                                <include reference="FuB-nA-ypQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -223,13 +334,13 @@
                         <outlet property="outputTextView" destination="0vT-bs-H4d" id="o3T-Vf-gew"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.25" y="416.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -243,7 +354,6 @@
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
