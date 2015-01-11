@@ -109,11 +109,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func modeButtonPressed(sender: UIButton) {
 		if currentMode == mode.enc {
 			currentMode = mode.dec
-			sender.setTitle("Current Mode: Decrypt", forState: UIControlState.Normal)
+			sender.setTitle(NSLocalizedString("CURRENT_MODE",comment:"Current mode") + ": " + NSLocalizedString("DECRYPT", comment: "Decrypt"), forState: UIControlState.Normal)
 			outputTextView.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 		} else {
 			currentMode = mode.enc
-			sender.setTitle("Current Mode: Encrypt", forState: UIControlState.Normal)
+			sender.setTitle(NSLocalizedString("CURRENT_MODE",comment:"Current mode") + ": " + NSLocalizedString("ENCRYPT", comment: "Encrypt"), forState: UIControlState.Normal)
 			outputTextView.text = vigenere(inputTextField.text, key: encKeyTextField.text)
 		}
 	}

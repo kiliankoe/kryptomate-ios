@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		395C2FFB1A6302D200769476 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 395C2FFD1A6302D200769476 /* Localizable.strings */; };
 		397624EC19C2656800AD0EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624EB19C2656800AD0EA0 /* AppDelegate.swift */; };
 		397624EE19C2656800AD0EA0 /* CaesarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624ED19C2656800AD0EA0 /* CaesarViewController.swift */; };
 		397624F019C2656800AD0EA0 /* VigenereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397624EF19C2656800AD0EA0 /* VigenereViewController.swift */; };
@@ -27,6 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		395C2FF71A62FE8D00769476 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		395C2FF81A62FE8D00769476 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		395C2FFC1A6302D200769476 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		395C2FFE1A6302D400769476 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		397624E619C2656800AD0EA0 /* Kryptomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kryptomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397624EA19C2656800AD0EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		397624EB19C2656800AD0EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		397624DD19C2656800AD0EA0 = {
 			isa = PBXGroup;
 			children = (
+				395C2FFD1A6302D200769476 /* Localizable.strings */,
 				397624E819C2656800AD0EA0 /* Kryptomate */,
 				3976250019C2656800AD0EA0 /* KryptomateTests */,
 				397624E719C2656800AD0EA0 /* Products */,
@@ -179,6 +185,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 397624DD19C2656800AD0EA0;
 			productRefGroup = 397624E719C2656800AD0EA0 /* Products */;
@@ -197,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				397624F319C2656800AD0EA0 /* Main.storyboard in Resources */,
+				395C2FFB1A6302D200769476 /* Localizable.strings in Resources */,
 				397624F819C2656800AD0EA0 /* LaunchScreen.xib in Resources */,
 				397624F519C2656800AD0EA0 /* Images.xcassets in Resources */,
 			);
@@ -241,10 +249,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		395C2FFD1A6302D200769476 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				395C2FFC1A6302D200769476 /* en */,
+				395C2FFE1A6302D400769476 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		397624F119C2656800AD0EA0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				397624F219C2656800AD0EA0 /* Base */,
+				395C2FF71A62FE8D00769476 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -253,6 +271,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				397624F719C2656800AD0EA0 /* Base */,
+				395C2FF81A62FE8D00769476 /* de */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

@@ -1,0 +1,33 @@
+
+/* Class = "IBUITextField"; placeholder = "Encryption key"; ObjectID = "AyJ-yG-R1x"; */
+"AyJ-yG-R1x.placeholder" = "Schlüssel";
+
+/* Class = "IBUILabel"; text = "Enter the text, adjust the depth and choose either en- or decryption mode."; ObjectID = "JQe-cb-OfV"; */
+"JQe-cb-OfV.text" = "Gib den Text ein und wähle die Tiefe und den passenden Modus.";
+
+/* Class = "IBUILabel"; text = "Enter the text and key and choose either en- or decryption mode."; ObjectID = "X9A-fp-pvM"; */
+"X9A-fp-pvM.text" = "Gib den Text und Schlüssel ein und wähle den passenden Modus.";
+
+/* Class = "IBUITextField"; placeholder = "Text to en-/decrypt"; ObjectID = "Y6U-Nx-AuY"; */
+"Y6U-Nx-AuY.placeholder" = "Text zum ver-/entschlüsseln";
+
+/* Class = "IBUITabBarItem"; title = "Caesar"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Caesar";
+
+/* Class = "IBUITabBarItem"; title = "Vigenère"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Vigenère";
+
+/* Class = "IBUILabel"; text = "Kryptomate"; ObjectID = "eIG-BG-mJE"; */
+"eIG-BG-mJE.text" = "Kryptomate";
+
+/* Class = "IBUITextField"; placeholder = "Text to en-/decrypt"; ObjectID = "fe5-q7-vM5"; */
+"fe5-q7-vM5.placeholder" = "Text zum ver-/entschlüsseln";
+
+/* Class = "IBUIButton"; normalTitle = "Current mode: Encrypt (10)"; ObjectID = "m30-jP-uhW"; */
+"m30-jP-uhW.normalTitle" = "Aktueller Modus: Verschlüsseln (10)";
+
+/* Class = "IBUILabel"; text = "Kryptomate"; ObjectID = "ySE-BC-CjD"; */
+"ySE-BC-CjD.text" = "Kryptomate";
+
+/* Class = "IBUIButton"; normalTitle = "Current Mode: Encrypt"; ObjectID = "zhJ-QH-jrM"; */
+"zhJ-QH-jrM.normalTitle" = "Aktueller Modus: Verschlüsseln";

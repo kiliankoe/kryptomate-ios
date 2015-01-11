@@ -20,9 +20,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 		func description() -> String {
 			switch self {
 			case .enc:
-				return "Current mode: Encrypt"
+//				return "Current mode: Encrypt"
+				return NSLocalizedString("CURRENT_MODE",comment:"Current mode") + ": " + NSLocalizedString("ENCRYPT", comment: "Encrypt")
 			case .dec:
-				return "Current mode: Decrypt"
+				return NSLocalizedString("CURRENT_MODE",comment:"Current mode") + ": " + NSLocalizedString("DECRYPT", comment: "Decrypt")
 			}
 		}
 		func crypt() -> Int {
